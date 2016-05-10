@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mode of outputs in JavaScript </title>
+
+</head>
+
+<body>
+    <div>
+        /* This is output using innerHTML and innerText */ This is my div
+        <span>This is my span
+        <p>This is my P</p>
+        </span>
+        <br>
+        <p id="demo"></p>
+
+    </div>
+</body>
+
+<script>
+    /* 01 - window*/
+
+    (function () {
+        alert('This is output from alert function using window object.');
+        document.write("This is output from write function using document object.");
+        document.getElementById("demo").innerHTML = 5 + 6;
+        console.log("This is output from log function using console object.");
+    }());
+
+    /* 02 - document*/
+</script>
+
+</html>

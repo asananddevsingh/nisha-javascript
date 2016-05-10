@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Imediatly invoked function expression</title>
+    <script>
+
+        (function ABC() {
+            console.log('IIFE');
+        }());
+
+
+        (function () {
+            var basicSalary = 1000;
+            /**/
+            function CalculateSalary(workedHours) {
+
+                workedHours = workedHours || 0;
+                return basicSalary * workedHours;
+            };
+            console.log(CalculateSalary(10)); /**/
+        }());
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
