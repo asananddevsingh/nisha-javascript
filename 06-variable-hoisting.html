@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Variable hoisting</title>
+    <script>
+        /**/
+        function greetGlobal() {
+            console.log(global);
+        }
+
+        greetGlobal();
+
+        var global = 'Hey there !';
+
+        Variable hoisting
+
+        var hoisted;
+
+        function greetHoisting() {
+            console.log(hoisted);
+        }
+
+        greetHoisting();
+
+        hoisted = 'Message from hoisted';
+
+
+        (function () {
+            function foo() {
+                function greet() {
+
+                    console.log(msg);
+                };
+                msg = 'This is the message';
+                greet();
+                var msg; // In variable hoisting, it will pe pulled up to the function scope.
+            }
+            foo();
+        }());
+    </script>
+
+</head>
+
+<body>
+    // Variable hoisting => It puts the variable at the top of its scope. This is the default nature of JavaScript.
+</body>
+
+</html>

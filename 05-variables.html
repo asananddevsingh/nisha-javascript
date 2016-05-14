@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Variables</title>
+
+    <script>
+        var global = "Hello from global variable !";
+
+        function Greet() {
+            console.log(global);
+        };
+
+        Greet();
+
+        (function () {
+            var private = "Hello from private variable";
+            console.log(private);
+            console.log('*******************')
+            var x = 1;
+            var y = "1";
+
+            // == is called as value equality
+            if (x == y)
+                console.log('Yes; x == y');
+            else
+                console.log('No; x == y');
+
+
+            // === is called is strict equality
+            if (x === y)
+                console.log('Yes; x === y');
+            else
+                console.log('No; x === y');
+        }());
+
+        // Remove the above semicolon, to understand the power use of semicolon.
+        (function(){
+
+            var otherVar;
+            // const is read only variable, we can not change is further and we must need to asign it some value at the time of declaration.
+            const pi = 3.14;
+
+
+            function PrintPi(){
+                console.log("value is pi is: ", pi);
+            };
+            otherVar = "My var";
+
+            PrintPi();
+        }());
+
+    </script>
+
+</head>
+
+<body>
+    <h1>JavaScript Variables </h1>
+    <p>JavaScript variables are containers for storing data values.</p>
+    <hr>
+    <h1>JavaScript Identifiers </h1>
+    <p>All JavaScript variables must be identified with unique names.</p>
+
+    <p>These unique names are called identifiers.</p>
+
+    <p>Identifiers can be short names (like x and y), or more descriptive names (age, sum, totalVolume).</p>
+
+    <p>The general rules for constructing names for variables (unique identifiers) are:</p>
+
+    <ul>
+        <li>Names can contain letters, digits, underscores, and dollar signs.</li>
+        <li>Names must begin with a letter</li>
+        <li>Names can also begin with $ and _ (but we will not use it in this tutorial)</li>
+        <li>Names are case sensitive (y and Y are different variables)</li>
+        <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+    </ul>
+    <hr>
+    <h3>
+        // == is called as value equality
+// === is called is strict equality
+    </h3>
+</body>
+
+</html>
