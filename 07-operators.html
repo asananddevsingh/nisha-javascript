@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Operators</title>
+
+    <script>
+
+        (function(){
+
+            console.log('/* Arithmetic Operators */')
+
+
+            function ArithmeticOperations (fnum, snum){
+
+                console.log("Sum: ", fnum + snum );
+                console.log("Sub: ", fnum - snum );
+                console.log("Mul: ", fnum * snum );
+                console.log("Div: ", fnum / snum );
+                console.log("Mod: ", fnum % snum );
+                console.log("fnum++: ", ++fnum);
+                console.log("snum--: ", --snum);
+
+            }
+
+            ArithmeticOperations(6,2);
+
+
+            console.log('/* Assignment Operators */')
+
+            function AssignmentOperations (fnum, snum){
+
+                var a = fnum + snum;
+
+                fnum += 1; // fnum = funm + 1;
+                snum -= 1; // snum = snum - 1;
+
+                console.log("fnum += 1 = ", fnum);
+                console.log("snum -= 1 = ", snum);
+
+                // NOTE:
+                var myvar = myvar + 1; // we can't perform self assigment operations at the time of declaration.
+
+            };
+            AssignmentOperations(6,2);
+
+
+            console.log('/* Comparison and Logical Operators */')
+            /* We use comparision and logical operations to evaluate the expression's logical value. */
+            function ComparisonAndLogicalOperations (){
+                // Comparison operators.
+                console.log('1 == 1 : ', 1 == 1);
+                console.log('1 === "1" : ', 1 === '1');
+
+                // Logical operators.
+                console.log('1 >= 1 : ', 1 >= 1);
+                console.log('1 < "1" : ', 1 < '1');
+
+                // ? ternary operator
+
+                /*if( 1 == 1)
+                    console.log(true);
+                else
+                    console.log(false);*/
+                (1==1) ? console.log('It is true') : console.log('It is false');
+            };
+
+            ComparisonAndLogicalOperations();
+
+            console.log('/* Type Operators */')
+
+            function TypeOperations (){
+                /*var text = null;
+                if (text === undefined)
+                    console.log('text is, ', text);
+                else
+                    console.log('text is, ', text );*/
+
+                var text;
+                if (typeof text === 'undefined')
+                    console.log('text is, ', text);
+                else
+                    console.log('text is, ', text);
+
+                var date = new Date(); // date is instance of Date() function;
+
+                if(date instanceof Date)
+                    console.log('date is instance of Date');
+                else
+                    console.log('No; date is not instance of Date');
+
+            };
+
+            TypeOperations();
+
+        }());
+
+    </script>
+
+</head>
+
+<body>
+    <h2>JavaScript Arithmetic Operators</h2>
+    <p>Arithmetic operators are used to perform arithmetic on numbers (literals or variables).
+    </p>
+    <table class="w3-table-all notranslate">
+        <tbody>
+            <tr>
+                <th style="width:25%">Operator</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>+</td>
+                <td>Addition</td>
+            </tr>
+            <tr>
+                <td>-</td>
+                <td>Subtraction</td>
+            </tr>
+            <tr>
+                <td>*</td>
+                <td>Multiplication</td>
+            </tr>
+            <tr>
+                <td>/</td>
+                <td>Division</td>
+            </tr>
+            <tr>
+                <td>%</td>
+                <td>Modulus</td>
+            </tr>
+            <tr>
+                <td>++</td>
+                <td>Increment</td>
+            </tr>
+            <tr>
+                <td>--</td>
+                <td>Decrement</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>JavaScript Assignment Operators</h2>
+    <p>Assignment operators assign values to JavaScript variables.</p>
+    <table class="w3-table-all notranslate">
+        <tbody>
+            <tr>
+                <th style="width:25%">Operator</th>
+                <th>Example</th>
+                <th>Same As</th>
+            </tr>
+            <tr>
+                <td>=</td>
+                <td>x = y</td>
+                <td>x = y</td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>x += y</td>
+                <td>x = x + y</td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>x -= y</td>
+                <td>x = x - y</td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>x *= y</td>
+                <td>x = x * y</td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>x /= y</td>
+                <td>x = x / y</td>
+            </tr>
+            <tr>
+                <td>%=</td>
+                <td>x %= y</td>
+                <td>x = x % y</td>
+            </tr>
+        </tbody>
+    </table>
+    <h2>JavaScript String Operators</h2>
+    <p>The + operator can also be used to add (concatenate) strings.</p>
+    <p>The += assignment operator can also be used to add (concatenate) strings:</p>
+    <h2>JavaScript Comparison and Logical Operators</h2>
+    <div class="table-responsive">
+        <table class="w3-table-all notranslate">
+            <tbody>
+                <tr>
+                    <th style="width:12%">Operator</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>==</td>
+                    <td>equal to</td>
+                </tr>
+                <tr>
+                    <td>===</td>
+                    <td>equal value and equal type</td>
+                </tr>
+                <tr>
+                    <td>!=</td>
+                    <td>not equal</td>
+                </tr>
+                <tr>
+                    <td>!==</td>
+                    <td>not equal value or not equal type</td>
+                </tr>
+                <tr>
+                    <td>&gt;</td>
+                    <td>greater than</td>
+                </tr>
+                <tr>
+                    <td>&lt;</td>
+                    <td>less than</td>
+                </tr>
+                <tr>
+                    <td>&gt;=</td>
+                    <td>greater than or equal to</td>
+                </tr>
+                <tr>
+                    <td>&lt;=</td>
+                    <td>less than or equal to</td>
+                </tr>
+                <tr>
+                    <td>?</td>
+                    <td>ternary operator</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h2>JavaScript Type Operators</h2>
+    <div class="table-responsive">
+        <table class="w3-table-all notranslate">
+            <tbody>
+                <tr>
+                    <th style="width:30%">Operator</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>typeof</td>
+                    <td>Returns the type of a variable</td>
+                </tr>
+                <tr>
+                    <td>instanceof</td>
+                    <td>Returns true if an object is an instance of an object type</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
