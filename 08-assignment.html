@@ -1,10 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Assigment</title>
-</head>
-<body>
+    <script>
+        // We can assign values to variable by two types.
+        // 1 - By value
+        // 2 - By reference
+        (function () {
 
+            // 1 - By value
+            var a = 101;
+            var b = a; // This will be passed by value.
+            a = 201;
+
+            console.log('Value of a = ', a, ' and value of b = ', b);
+
+            // 2 - By reference
+            var obj1 = {
+                id: 101,
+                name: 'JavaScript'
+            }
+
+            var obj2 = obj1; // This will be passed by reference.
+            obj1.name = 'AngularJS';
+            console.log('Value of obj1 = ', obj1, ' \nand value of obj2 = ', obj2);
+
+        }())
+    </script>
+</head>
+
+<body>
+    <h3>JavaScript Assignment Operators</h3>
+    <p>Assignment operators assign values to JavaScript variables</p>
+    <table class="w3-table-all notranslate">
+        <tbody>
+            <tr>
+                <th style="width:25%">Operator</th>
+                <th>Example</th>
+                <th>Same As</th>
+            </tr>
+            <tr>
+                <td>=</td>
+                <td>x = y</td>
+                <td>x = y</td>
+            </tr>
+            <tr>
+                <td>+=</td>
+                <td>x += y</td>
+                <td>x = x + y</td>
+            </tr>
+            <tr>
+                <td>-=</td>
+                <td>x -= y</td>
+                <td>x = x - y</td>
+            </tr>
+            <tr>
+                <td>*=</td>
+                <td>x *= y</td>
+                <td>x = x * y</td>
+            </tr>
+            <tr>
+                <td>/=</td>
+                <td>x /= y</td>
+                <td>x = x / y</td>
+            </tr>
+            <tr>
+                <td>%=</td>
+                <td>x %= y</td>
+                <td>x = x % y</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
+
 </html>
