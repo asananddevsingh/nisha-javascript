@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Truthy and Falsy expressions</title>
+
+    <script>
+        (function () {
+            // Flasy Expressions.
+            console.log('Thre are only 6 values in the javascript that behaves falsy.');
+            console.log('0 is of type: ', !!0);
+            console.log('"" is of type: ', !!"");
+            console.log('NaN is of type: ', !!NaN);
+            console.log('undefined is of type: ', !!undefined);
+            console.log('null is of type: ', !!null);
+            console.log('false is of type: ', !!false);
+
+            // Truthy Expressions.
+            console.log('\nOther than falsy values, every thing in JS is truthy.');
+
+            console.log('\nWithout evaluating truthy/false value of name.')
+            function PrintName1(name) {
+                // Without evaluating truthy/false value of name.
+                if ( typeof name !== 'undefined' && name !== '')
+                    console.log(name);
+                else
+                    console.log('Name is not defined');
+            };
+
+            PrintName1();
+            PrintName1('JavaScript');
+
+            console.log('\nWith evaluating truthy/false value of name.')
+            function PrintName2(name) {
+                // With evaluating truthy/false value of name.
+                if (name)
+                    console.log(name);
+                else
+                    console.log('Name is not defined');
+            };
+
+            PrintName2();
+            PrintName2('JavaScript');
+
+        }());
+    </script>
+
+</head>
+
+<body>
+    <h3>Falsy expressions in javascript</h3>
+    <p>Falsy expressions are those expressions whose logical evaluation gives us false value.</p>
+    <p>There are only 6 falsy expressions in JavaScript:</p>
+    <ul>
+        <li>0</li>
+        <li>'' (Empty string)</li>
+        <li>NaN</li>
+        <li>undefined</li>
+        <li>null</li>
+        <li>false</li>
+    </ul>
+</body>
+
+</html>
