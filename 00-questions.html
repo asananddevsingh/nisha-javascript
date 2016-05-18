@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Questions/Queries</title>
+
+    <script>
+        /* Without using 'use strict' mode */
+        (function () {
+            var a1 = b1 = 1;
+            /* above statement is equals to:
+                b = 1;
+                var a = b;
+            */
+        })();
+
+        console.log("typeof is a1 ? " + (typeof a1));
+        console.log("typeof is b1 ? " + (typeof b1));
+    </script>
+
+    <script>
+        /* Using 'use strict' mode */
+        'use strict';
+        (function () {
+            var a2 = b2 = 2; // It will throw an error of "ReferenceError: b2 is not defined".
+        })();
+
+        console.log("typeof is a2 ? " + (typeof a2));
+        console.log("typeof is b2 ? " + (typeof b2));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
