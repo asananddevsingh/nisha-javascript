@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Datatype conversions</title>
     <script>
-
-        (function(){
+        (function () {
 
             console.log(10 + '10');
 
@@ -18,11 +18,11 @@
             console.log('10' + (20 + 30));
 
             // The undelying datatype of number in javascript is "Float".
-             (function(){
+            (function () {
                 var x = 100;
-                 for(var i = 0 ; i < 5; i ++)
+                for (var i = 0; i < 5; i++)
                     console.log(x = x - 0.05);
-             }());
+            }());
 
             // Array example
             console.log('Array example');
@@ -33,14 +33,26 @@
             array.prop = 'This is array';
             console.log(array.length);
 
+            // Object example;
+            var obj = {}; // This is an empty object.
 
+            var emp = {
+                id: 101,
+                name: 'JavaScript'
+            }
+
+            console.log(emp);
+            console.log('After adding new prop');
+            emp.age = 28;
+            console.log(emp);
 
 
         }())
-
     </script>
 </head>
+
 <body>
     <h2>Open the console window to see the results.</h2>
 </body>
+
 </html>
