@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Datatype conversions</title>
+    <script>
+
+        (function(){
+
+            console.log(10 + '10');
+
+            console.log('10' + '10');
+
+            console.log(10 + 20 + '30');
+
+            console.log('10' + 20 + 30);
+
+            console.log('10' + (20 + 30));
+
+            // The undelying datatype of number in javascript is "Float".
+             (function(){
+                var x = 100;
+                 for(var i = 0 ; i < 5; i ++)
+                    console.log(x = x - 0.05);
+             }());
+
+            // Array example
+            console.log('Array example');
+            var array = [];
+            array[4] = 'abc';
+            console.log(array.length);
+            console.log('After adding any prop');
+            array.prop = 'This is array';
+            console.log(array.length);
+
+
+
+
+        }())
+
+    </script>
+</head>
+<body>
+    <h2>Open the console window to see the results.</h2>
+</body>
+</html>
