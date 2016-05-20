@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Functions</title>
+    <script>
+        /* Anonymous function */
+        (function(){
+           console.log('This is Anonymous function.');
+        }());
+
+        /* Named function / Parameter less function */
+        function NamedFn (){
+            console.log('This is named function.');
+        }
+        NamedFn();
+
+        /* Parameterized less function */
+        function ParameterizedFn (num1 , num2){ // num1 and num2 are parameters.
+            console.log('Sum = ', num1 + num2);
+        }
+        /* Note: In javascript, it is not compulsary to pass the arguments. */
+        ParameterizedFn()
+        ParameterizedFn(10)
+        ParameterizedFn(10,20); //10 and 20 are arguments.
+
+
+    </script>
+</head>
+
+<body>
+    <h3>JavaScript Functions</h3>
+    <p>
+        A JavaScript function is a block of code designed to perform a particular task. A JavaScript function is executed when "something" invokes it (calls it).
+    </p>
+    <p>You can reuse code: Define the code once, and use it many times.</p>
+    <p>What is function ?  <br>
+        <b>Function is block of code which promotes algoritham reuse.</b></p>
+    <hr>
+    <h3>Types of function</h3>
+    <ul>
+        <li>Anonymous function</li>
+        <li>Named function</li>
+        <li>Parameter less function</li>
+        <li>Parameterized function</li>
+        <li>Constructor function</li>
+    </ul>
+    <hr>
+    <p>Note: In javascript, it is not compulsary to pass the arguments.</p>
+    <p>Default return type and value of any function is undefined</p>
+    <p>The () Operator Invokes the Function</p>
+
+</body>
+
+</html>
