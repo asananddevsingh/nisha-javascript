@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Questions/Queries</title>
 
-  <!-- Question Ref: https://www.toptal.com/javascript/interview-questions -->
+    <!-- Question Ref: https://www.toptal.com/javascript/interview-questions -->
 
     <script>
         /* Without using 'use strict' mode */
@@ -31,6 +31,39 @@
         console.log("typeof is a2 ? " + (typeof a2));
         console.log("typeof is b2 ? " + (typeof b2));
     </script>
+
+    <script>
+        (function () {
+            /*Example */
+            ///
+
+            var n1 = 'key';
+            var n2 = 'key';
+
+            var obj = {};
+
+            obj[n1] = 'First value'; // This is equivalent to => obj['key];
+            obj[n2] = 'Second value'; // This isa also equivalent to => obj['key];
+
+            console.log(obj[n1]); // It will give 'Second value', because obj[n2] has overwritten obj[n1].
+
+            ///
+            var a = {},
+                b = {
+                    key: 'b'
+                },
+                c = {
+                    key: 'c'
+                };
+
+            a[b] = 123;
+            a[c] = 456;
+
+            console.log(a[b]);
+
+        }());
+    </script>
+
 </head>
 
 <body>
