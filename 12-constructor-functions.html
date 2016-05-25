@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Constructor Functions</title>
+
+    <script>
+
+
+        (function(){
+            // Best practices - Start name with capital letter.
+            // Example - 1.
+            function ConstructorFn (){
+
+                this.id = 101;
+                this.fName = 'Constructor';
+                this.lName = 'Function';
+
+                this.getFullName = function (){
+                    return this.fName + ' ' + this.lName;
+                }
+
+                this.details = {
+                    id: this.id,
+                    fname: this.fName,
+                    lname: this.lName,
+                    fullname: this.getFullName()
+                }
+            };
+
+            var emp = new ConstructorFn(); // emp is function instance/object.
+            console.log('basi const function obj = ', emp);
+
+            // Example - 2
+            function EmployeeFn (id, name, sal, age){
+
+                this.id = id || 0;
+                this.name = name || 'No name';
+                this.salary = sal || 0;
+                this.greetMsgFn = function(){
+                    return 'Hey ! ' + name + ', Your age is ' + ( age || 'Not defined' );
+                }
+            };
+
+            var emp1 = new EmployeeFn();
+            console.log('First employee object, ', emp1);
+            var emp2 = new EmployeeFn(101, 'JavaScript', 1000, 28);
+            console.log('Second employee object, ', emp2);
+            var emp3 = new EmployeeFn(102, 'Angular', 2000, 30);
+            console.log('Third employee object, ', emp3);
+
+        }())
+
+    </script>
+
 </head>
 <body>
+    <h3>Constructor function</h3>
+    <p>The <b>Function constructor</b> creates a new Function object. In JavaScript every function is actually a Function object.</p>
 
 </body>
+
 </html>
