@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Objects</title>
+
+    <script>
+        (function () {
+
+            /* You define (and create) a JavaScript object with an object literal: */
+            var car = {
+
+                name: 'BMW',
+                color: 'Black',
+                start: function () {
+                    console.log('Car is started');
+                },
+                stop: function () {
+                    console.log('Car is stoped');
+                },
+                details: {
+                    company: 'BMW',
+                    model: 'abc',
+                    price: '10000000'
+                },
+                countries: ['India', 'US', 'Italy']
+            };
+
+            /* car is and object */
+            console.log('Object, ', car);
+
+            /* name and color are properties of car object */
+            console.log('Properties, ', car.name, ' or ,', car.color);
+
+            /* start and stop are methods of car object*/
+            car.start();
+
+            /*Accessing Object Properties*/
+
+
+            var languages = {
+                js: 'JavaScript',
+                2: 'JQuery',
+                "!": 'AngularJS'
+            }
+            console.log('Accessing Object Properties of', languages);
+            /*  */
+            console.log('By dot perator, languages.js = ', languages.js);
+            console.log('By custom defined index numbers, languages[2] = ', languages[2]);
+            console.log('By name of property, languages["!"] = ', languages["!"]);
+
+        }())
+    </script>
+
+</head>
+
+<body>
+    <h3>Object</h3>
+    <p>In real life, a car is an object. A car has properties like weight and color, and methods like start and stop:</p>
+    <p>Objects are variables too. But objects can contain many values.</p>
+    <p>The values are written as name:value pairs (name and value separated by a colon).</p>
+    <p>Spaces and line breaks are not important. An object definition can span multiple lines:</p>
+</body>
+
+</html>
