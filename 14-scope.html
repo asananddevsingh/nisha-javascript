@@ -42,6 +42,23 @@
         }());
     </script>
 
+    <!-- Question -->
+    <script>
+        function foo() {
+            var myVar = 5;
+
+            function bar() {
+                console.log(myVar); // undefined
+                var myVar = 10;
+            };
+
+            console.log(myVar); // 5
+            bar();
+            console.log(myVar); // 10
+        };
+        foo();
+    </script>
+
 </head>
 
 <body>
@@ -52,7 +69,7 @@
     <p>Variables declared within a JavaScript function, become LOCAL to the function.</p>
     <hr>
     <h3>Global JavaScript Variables</h3>
-    <b  style="color:red;">Do NOT create global variables unless you intend to.</b>
+    <b style="color:red;">Do NOT create global variables unless you intend to.</b>
     <p>A variable declared outside a function, becomes GLOBAL. A global variable has global scope: All scripts and functions on a web page can access it. </p>
     <hr>
     <h3>Automatically Global</h3>
@@ -73,5 +90,3 @@
 
 </html>
 
-
-<!-- Kuchh baat karni hai -->
