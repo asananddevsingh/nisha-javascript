@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prevent default events</title>
+    <script src="/libs/jquery-2.2.3.min.js"></script>
+    <style>
+        div,
+        span,
+        p {
+            border: 1px solid #000;
+        }
+
+        div {
+            border: 2px solid red;
+        }
+
+        span {
+            background-color: blue;
+            height: 30px;
+        }
+
+        p {
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h3>e.PreventDefault()</h3>
+    <a id="aAnchor" href="http://www.google.com" target="_blank">Anchor tag</a>
+    <!--<form action="post">
+        <input type="submit">
+    </form>-->
+    <h3>Stop propogation</h3>
+    <div onclick="DivClicked(event)">
+        <span onclick="SpanClicked(event)">
+            <p onclick="PClicked(event)">this is text into div => span => p</p>
+        </span>
+    </div>
+    <hr>
+    <h3>Stop immediate propogation</h3>
+    <div style="height:100px;width:300px;padding:10px;border:1px solid blue;background-color:lightblue;">Click on this div element.</div>
+
+    <p>The second and third click event will not be executed due to event.stopImmediatePropagation(). Try to erase this method and see what happens.
+</body>
+
+<script>
+    document.getElementById("aAnchor").addEventListener("click", function (event) {
+        console.log('Anchor link is clicked !');
+        event.preventDefault();
+    });
+
+    function DivClicked(e) {
+        console.log('Div is clicked !');
+    }
+
+    function SpanClicked(e) {
+        e.stopPropagation(); // It will stop the propogation from span to div.
+        console.log('Span is clicked !');
+    }
+
+    function PClicked(e) {
+        console.log('P is clicked !');
+    }
+</script>
+
+<script>
+    $(document).ready(function () {
+        $("div").click(function (event) {
+            event.stopImmediatePropagation();
+            alert("Event handler 1 executed");
+        });
+        $("div").click(function (event) {
+
+            alert("Event handler 2 executed");
+        });
+        $("div").click(function (event) {
+            alert("Event handler 3 executed");
+        });
+    });
+</script>
+
+</html>
