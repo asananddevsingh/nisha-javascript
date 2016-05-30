@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>miscellaneous questions</title>
+    <script>
+        /* Example 1 */
+        var v1 = 10;
+
+        function fn1() {
+            console.log('fn1:', v1);
+        };
+
+        fn1();
+
+         /* Example 2*/
+
+        function fn2() {
+            console.log('fn2:', v2);
+        };
+
+        var v2 = 10;
+        fn2();
+
+        /* Example 3*/
+
+        function fn3() {
+            console.log('fn3:', v3);
+        };
+
+        fn3();
+        var v3 = 10;
+
+        /*Example 4*/
+        var v4 = 10;
+
+        function fn4() {
+            var v4 = 5;
+            console.log('fn4-A:', v4);
+        };
+
+        fn4();
+        console.log('fn4-B:', v4);
+
+        /*Example 5*/
+        var v5 = 15;
+
+        function fn5() {
+            var v5 = 5;
+            console.log('fn5-A:', v5);
+            var v5 = 10;
+        };
+
+        fn5();
+        console.log('fn5-B:', v5);
+
+        /*Example 6*/
+        function fn6() {
+            var v6 = 6;
+            console.log('fn6-A:', v6);
+            v6 = 10;
+        };
+
+        fn6();
+        // console.log('fn6-B:', v6); // It will throw error.
+
+        /*Example 7*/
+        function fn7() {
+            //console.log('fn7-A:', v7); // It will throw error.
+            var v7 = 10;
+        };
+
+        fn7();
+        //console.log('fn7-B:', v7); // It will also throw error.
+
+        /*Example 8*/
+        function fn8() {
+            console.log('fn8-A:', v8);
+            var v8 = 8;
+        };
+
+        fn8();
+        //console.log('fn8-B:', v8); // It will throw error
+
+        /*Example 9*/
+        function fn9() {
+            console.log('fn9-A:', v9); // undefined
+            var v9 = 9;
+        };
+
+        fn9();
+        console.log('fn9-B:', v9); // undefined
+        var v9 = 19;
+
+        /*Example 10*/
+
+        function fn10() {
+            console.log('fn10-A:', v10); //
+            var v10 = 10;
+        };
+
+        window.v10 = 101;
+        fn10();
+        console.log('fn10-B:', v10); //
+        var v10 = 100;
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
