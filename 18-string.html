@@ -4,14 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <title>String</title>
+    <script src="/libs/angular.min.js"></script>
     <script>
+        (function () {
 
+            var str1 = "JavaScript";
+            console.log(str1.length);
 
+            var str2 = 'This is "JavaScript\\\'s class"'
+            console.log(str2); // Here \ is called as escape character.
+
+            var str3 = "JavaScript"
+            var str4 = new String("JavaScript");
+
+            console.log("String comparision with == ", str3 == str4);
+            console.log("String comparision with === ", str3 === str4);
+
+            /**/
+            var x = new String("John");
+            var y = new String("John");
+
+            console.log("Comparision between two string objects, ", x == y);
+
+        }())
     </script>
 </head>
 
 <body>
+    <h3>JavaScript Strings</h3>
+    <p>A JavaScript string simply stores a series of characters like "John Doe".</p>
 
+    <p>A string can be any text inside quotes. You can use single or double quotes:</p>
+    <hr>
+    <h3>String Length</h3>
+    <p>The length of a string is found in the built in property length:</p>
+    <hr>
+    <h3>Special Characters</h3>
+    <p>Because strings must be written within quotes, JavaScript will misunderstand this string:</p>
+    <p>The solution to avoid this problem, is to use the \ escape character.</p>
+    <table class="w3-table-all notranslate">
+        <tbody>
+            <tr>
+                <th>Code</th>
+                <th>Outputs</th>
+            </tr>
+            <tr>
+                <td>\'</td>
+                <td>single quote</td>
+            </tr>
+            <tr>
+                <td>\"</td>
+                <td>double quote</td>
+            </tr>
+            <tr>
+                <td>\\</td>
+                <td>backslash</td>
+            </tr>
+            <tr>
+                <td>\n</td>
+                <td>new line</td>
+            </tr>
+            <tr>
+                <td>\r</td>
+                <td>carriage return</td>
+            </tr>
+            <tr>
+                <td>\t</td>
+                <td>tab</td>
+            </tr>
+            <tr>
+                <td>\b</td>
+                <td>backspace</td>
+            </tr>
+            <tr>
+                <td>\f</td>
+                <td>form feed</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3>Strings Can be Objects</h3>
+    <p>Normally, JavaScript strings are primitive values, created from literals: var firstName = "John"</p>
+    <p>But strings can also be defined as objects with the keyword new: var firstName = new String("John")</p>
 </body>
 
 </html>
