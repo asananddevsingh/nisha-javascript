@@ -1,0 +1,100 @@
+<!doctype>
+<html>
+
+<head>
+</head>
+
+<body>
+    <h2>Usesful links </h2>
+
+    <a href="http://adripofjavascript.com/blog/drips/basic-inheritance-with-javascript-constructors.html">First link</a>
+    <br>
+    <a href="https://rainsoft.io/understanding-constructor-property">Second Link</a>
+    
+    <script type="text/javascript">
+    
+    /*window object is default invocation context (this) in JavaScript*/
+        function print() {
+            console.log(this);
+        }
+
+        /**************************************************************************/
+        /*Constructor Function*/
+        function Employee(aName, aWorkHours, aRate) {
+            this.name = aName || "No name";
+            this.hours = aWorkHours || 0;
+            this.rate = aRate || 0;
+            this.salary = function() {
+                return (this.hours * this.rate);
+            }
+        }
+
+        var emp1 = new Employee("JS", 10, 500);
+
+        emp1.name;
+        emp1.salary();
+
+        var emp2 = new Employee("AngularJS", 20, 1000);
+        emp2.name;
+        emp2.salary();
+
+        /**************************************************************************/
+
+        /*this keyword/Invocation Context*/
+        function Employee(aName, aWorkHours, aRate) {
+            console.log("Cfn This: ", this);
+            this.name = aName;
+            this.salary = function() {
+                console.log("Cfn Method's This: ", this);
+                return (this.hours * this.rate);
+            }
+        }
+
+        var emp1 = new Employee(1001, 10, 50);
+        emp1.salary();
+
+        /**************************************************************************/
+
+        /* Changing Invocation Context*/
+        function welcomeEmployee(aId, aMessage) {
+            console.log("Arguments: ", arguments);
+            this.id = aId || 0;
+            this.message = aMessage || "No message";
+            this.greet = function() {
+                console.log("This.message:", this.message);
+                console.log("Parent message: ", aMessage);
+                console.log("Child arguments: ", arguments);
+            }
+        }
+
+        /*CASE 1: using "call" method*/
+        /*Firts welcomeEmployee object*/
+        var emp1 = new welcomeEmployee(101, "Welcome first employee.");
+        emp1.greet(); // Here incovation context (this) is emp1 object.
+
+        var obj1 = {
+            id: 1001,
+            message: "Welcome from outer object using call."
+        };
+        var outerEmp1 = emp1.greet.call(obj1, 1, 2, 3) // Here obj1 is changed invocation context and 1,2,3 are parameters.
+
+        /*CASE 2: using "apply" method*/
+        var obj2 = {
+            id: 2001,
+            message: "Welcome from outer object using apply."
+        };
+        var outerEmp2 = emp1.greet.apply(obj2, [1, 2, 3]) // Here obj2 is changed invocation context and [1,2,3] is parameters array.
+
+        /*CASE 3: using "bind" method*/
+        var obj3 = {
+            id: 3001,
+            message: "Welcome from outer object using bind."
+        };
+        var outerEmp2 = emp1.greet.bind(obj3, 1, 2, 3) // Here obj3 is changed invocation context and 1,2,3 are parameters. It will return another function with changed invocation context and to get that object you need to execute outerEmp2();
+        outerEmp2();
+    
+    </script>
+
+</body>
+
+</html>
