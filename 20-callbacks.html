@@ -1,0 +1,65 @@
+<!doctype>
+<html>
+
+<head>
+</head>
+
+<body>
+    <h2>Usesful links </h2>
+
+    <a href="http://adripofjavascript.com/blog/drips/basic-inheritance-with-javascript-constructors.html">First link</a>
+    <br>
+    <a href="https://rainsoft.io/understanding-constructor-property">Second Link</a>
+    
+    <script type="text/javascript">
+    
+    /*Callbacks*/
+        function getMessage() {
+            console.log('First line before serivce.');
+            var value = null;
+            setTimeout(function() {
+                console.log('Service returning data.');
+                value = "Welcome";
+            }, 2000);
+            console.log("Value: ", value);
+        }
+
+        getMessage(); //It will log Value: null.
+
+        /********/
+        function getMessage() {
+            console.log('First line before serivce.');
+            var value = null;
+            setTimeout(function() {
+                console.log('Service returning data.');
+                value = "Welcome";
+                console.log("Value: ", value); // This is the place where we need to call the callback function.
+            }, 2000);
+        };
+
+        getMessage(); //It will log Value: Welcome.
+
+
+        /********/
+        function getMessageAndExecuteCallback(callbackFn) {
+            console.log('First line before serivce.');
+            var value = null;
+            setTimeout(function() {
+                console.log('Service returning data.');
+                value = "Welcome";
+                callbackFn(value); // This is the callback function getting executed after the service returns the data.
+            }, 2000);
+        }
+
+        function myCallback(data) {
+            console.log("Data from service: ", data)
+        }
+
+        getMessageAndExecuteCallback(myCallback); // Here we are passing myCallback as a callback function to the function calling the service.
+
+    
+    </script>
+
+</body>
+
+</html>
