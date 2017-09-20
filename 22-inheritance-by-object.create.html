@@ -10,11 +10,79 @@
     <a href="http://adripofjavascript.com/blog/drips/basic-inheritance-with-javascript-constructors.html">First link</a>
     <br>
     <a href="https://rainsoft.io/understanding-constructor-property">Second Link</a>
-    
+
     <script type="text/javascript">
-    
-    /*TO DO*/
-    
+        /*Inheritance*/
+
+        /*Student Inheriting Teacher */
+        /*Teacher constructor function */
+        function Teacher() {
+            console.log('Teacher CnFn is called.');
+            this.name = "Teacher";
+        }
+
+        var t1 = new Teacher(); //Constructing teacher object.
+
+        /*Student constructor function */
+        function Student() {
+            console.log('Student CnFn is called.');
+            this.name = "Student";
+        }
+
+        var s1 = new Student(); //Constructing student object.
+        s1.knowledge(); //It will throught an error: s1.knowledge is not a function.
+
+        /*now, 'knowledge' is the property of Teacher which can be shared with others using prototype object of Teacher*/
+        Teacher.prototype.knowledge = function() {
+            console.log('Get my knowledge.');
+        }
+
+        /*First way: Student inheriting the prototype properties of Teacher.*/
+        Student.prototype = Teacher.prototype;
+
+        /*now create another student object which will be having the inherited propety i.e. knowledge*/
+        var s2 = new Student();
+        s2.knowledge(); //It is possible now.
+
+        var ss1 = new s2.constructor(); // It will call Teacher's constructor.
+
+        /* Now re-assign the constructor of Student which is overwritten by Teacher's constructor function.*/
+        Student.prototype.constructor = Student;
+
+        var ss2 = new s2.constructor(); // Now it will call Student's constructor.
+
+        /*Student Inheriting Father */
+        function Father() {
+            console.log('Father CnFn is called.');
+            this.name = "Father";
+        }
+
+        var f1 = new Father();
+
+        var s3 = new Student();
+        s3.surname() ////It will throught an error: s2.surname is not a function.
+
+        Father.prototype.surname = function() {
+            console.log('Get my surname');
+        }
+
+        /*Second way: Student inheriting the prototype properties of Father.*/
+        Student.prototype = Object.create(Father.prototype);
+
+        var s4 = new Student();
+        s4.surname() // This is possible now.
+
+        /* Now re-assign the constructor of Student which is overwritten by Father's constructor function.*/
+        Student.prototype.constructor = Student;
+
+        var ss3 = new s4.constructor();
+        // Till the time, Teacher's inherited properties are lost from student's object i.e. 'knowledge'. 
+        ss3.knowledge() // Error: ss3.knowledge is not a function.
+
+        /*Inheriting from multiple Base Functions*/
+        Object.assign(Student.prototype, Teacher.prototype);
+        ss3.knowledge() // Now this will be having both Father's and Teacher's prototype properties.
+
     </script>
 
 </body>
