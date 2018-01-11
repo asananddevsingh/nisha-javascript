@@ -28,6 +28,9 @@
         function Student() {
             console.log('Student CnFn is called.');
             this.name = "Student";
+            this.knowledge = function(){
+                console.log("This is my private knowledge");
+            }
         }
 
         var s1 = new Student(); //Constructing student object.
@@ -83,6 +86,13 @@
         /*Inheriting from multiple Base Functions*/
         Object.assign(Student.prototype, Teacher.prototype);
         ss3.knowledge() // Now this will be having both Father's and Teacher's prototype properties.
+        
+        /* Best way to assign the prototypes of multiple constructure is */
+        Object.assign(Student.prototype, Teacher.prototype, Father.prototype);
+        var ss4 = new Student();
+        ss4.surname();
+        ss4.knowledge();
+        ss4.constructor(); // It will call the student's constructor itself.
     
     </script>
 
