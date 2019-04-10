@@ -1,4 +1,4 @@
-// Prototypal inheritance
+// Prototypal inheritance: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Inheritance
 
 function Person(first, last, age, gender, interests) {
   this.name = {
